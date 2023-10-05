@@ -8,17 +8,13 @@
 <body>
 <?php
 
-// $age=30;
-// $name='李';
+$age=30;
+$name='李';
 
-// echo $age;
-// echo $name;
+echo $age;
+echo $name;
 
-// $age=$name;
-// $name=$age;
 
-// echo $age;
-// echo $name;
 
 $age=30;
 $name='李';
