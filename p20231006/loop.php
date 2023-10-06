@@ -57,13 +57,17 @@ echo "<hr>";
 <h3>巢狀迴圈</h3>
 
 <?php
-$a=98;
+$a=100;
 
-$flag=true;
+
 for($i=2;$i<($a/2);$i++){
+
+    $flag=true;
+
     echo "$a 除以 $i 餘數 ". ($a % $i);
     if(($a % $i) == 0){
         $flag=false;
+        // 可以被2整除為false是偶數
         echo "<br>";
         break;
     }
@@ -76,9 +80,6 @@ if($flag==true){
     echo $a . "不是質數";
 
 }
-
-
-
 
 ?>
 
