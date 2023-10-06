@@ -55,23 +55,21 @@ echo "<hr>";
 ?>
 
 <h3>巢狀迴圈</h3>
-
+<!-- 以下請用巢狀迴圈顯示出 3,5,7,11,13,17……97 -->
 <?php
-$a=100;
-
-
-for($i=2;$i<($a/2);$i++){
-
+$n=100;
+$count=0;
+for($j=3;$j<=$n;$j++){
     $flag=true;
 
-    echo "$a 除以 $i 餘數 ". ($a % $i);
-    if(($a % $i) == 0){
-        $flag=false;
-        // 可以被2整除為false是偶數
-        echo "<br>";
-        break;
+    for($i=2;$i<=($j/2);$i++) {
+        $count++;
+            echo "$j除以$i"
+            if(($j % $i)==0){
+                $flag=false;
+            }
     }
-    echo "<br>";
+   
 }
 
 if($flag==true){
