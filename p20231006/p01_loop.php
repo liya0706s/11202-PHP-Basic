@@ -9,8 +9,13 @@
 
 $sum=0;
 for($i=0;$i<=100;$i++) {
-    $sum=$sum+$i;
+    echo '當$i=' . "$i" . '時,';
+    echo '$sum等於' . $sum=$sum+$i;
+    echo '$sum+$i的值是' . "$sum=$sum+$i";
+    echo "<br>";
 }
+
+// "值", '文字'
 
 echo "1加到100為:" . $sum;
 
