@@ -28,3 +28,15 @@ echo "</pre>";
 
 echo $b['姓名'];
 echo $b['血型'];
+
+$c=[];
+$c['姓名']='Angie';
+$c['興趣']=['野餐','追劇','看書'];
+echo "<pre>";
+print_r($c);
+echo "</pre>";
+
+echo $c['姓名'];
+// 用中括號指定key值;
+echo $c['興趣'][0];
+echo $c['興趣'][2];
