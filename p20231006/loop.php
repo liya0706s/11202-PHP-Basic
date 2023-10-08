@@ -18,15 +18,6 @@ echo "1加到10為:" . $sum;
 
 ?>
 
-<?php
-// 單引號和雙引號怎麼使用? 
-$name=John;
-
-echo "Hi, $name!";  //會印出Hi, John!--雙引號放可變變數
-echo 'Hi, $name!';  //會印出Hi, $name!--單引號放變數名稱(不變)
-
-?>
-
 <h1>迴圈練習</h1>
 <h3>使用for迴圈來產生以下的數列</h3>
 <ul>
@@ -70,17 +61,17 @@ for($j=3;$j<=$n;$j++){
 
     for($i=2;$i<=($j/2);$i++) {
         $count++;
-            echo "$j除以$i"
-            if(($j % $i)==0){
+            echo "$j除以$i";
+            if(($j % $i)==0) {
                 $flag=false;
-            }
+            } 
     }
    
 }
 
 if($flag==true){
     echo $a . "是質數";
-}else{
+}else {
     echo $a . "不是質數";
 
 }
