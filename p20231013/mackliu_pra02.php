@@ -1,39 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        table, tr, td {
-            border-collapse: collapse;
-            border: 1px solid pink;
-        }
-       
-    </style>
-</head>
-<body>
+<style>
+    table{
+        border-collapse: collapse;
+        border:1px solid black;
+    }
+    td{
+        border:1px solid black;
+        padding: 3px 9px;
+    }
+</style>
 <h2>九九乘法表</h2>
 <?php
+
 echo "<table>";
-for($i=1;$i<=9;$i++){
+for($j=1;$j<=9;$j++){
     echo "<tr>";
-    $j=1;
-    while($j<9){
+    for ($i=1;$i<=9;$i++){
         echo "<td>";
-        $j++;
-        echo $i .'x'. $j.'='.($i*$j). "&nbsp&nbsp";
+        echo $j . ' * '.$i.' = '.($j*$i);
         echo "</td>";
     }
     echo "</tr>";
 }
 echo "</table>";
 ?>
-
+<!-- 
 <table>
     <tr>
+        <td>1x1=1</td>
         <td></td>
         <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>2x1=2</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>3x2=6</td>
         <td></td>
         <td></td>
         <td></td>
@@ -108,30 +124,42 @@ echo "</table>";
         <td></td>
         <td></td>
     </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-</table>
+</table> -->
 
-</body>
-</html>
+<?php
+/* 
 
+echo "<br>";
+for ($i=1;$i<=9;$i++){
+    echo '$j * '.$i.' = '.($j*$i). "&nbsp&nbsp&nbsp&nbsp";
+}
+echo "<br>";
+for ($i=1;$i<=9;$i++){
+    echo '$j * '.$i.' = '.($j*$i). "&nbsp&nbsp&nbsp&nbsp";
+}
+echo "<br>";
+for ($i=1;$i<=9;$i++){
+    echo '$j * '.$i.' = '.($j*$i). "&nbsp&nbsp&nbsp&nbsp";
+}
+echo "<br>";
+for ($i=1;$i<=9;$i++){
+    echo '$j * '.$i.' = '.($j*$i). "&nbsp&nbsp&nbsp&nbsp";
+}
+echo "<br>";
+for ($i=1;$i<=9;$i++){
+    echo '$j * '.$i.' = '.($j*$i). "&nbsp&nbsp&nbsp&nbsp";
+}
+echo "<br>";
+for ($i=1;$i<=9;$i++){
+    echo '$j * '.$i.' = '.($j*$i). "&nbsp&nbsp&nbsp&nbsp";
+}
+echo "<br>";
+for ($i=1;$i<=9;$i++){
+    echo '$j * '.$i.' = '.($j*$i). "&nbsp&nbsp&nbsp&nbsp";
+}
+echo "<br>";
+for ($i=1;$i<=9;$i++){
+    echo '$j * '.$i.' = '.($j*$i). "&nbsp&nbsp&nbsp&nbsp";
+}
+ */
+?>
