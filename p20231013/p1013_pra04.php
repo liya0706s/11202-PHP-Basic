@@ -80,3 +80,58 @@ for($i=0;$i<9;$i++){
     }
     echo "<br>";
 }
+?>
+
+<h2>矩形</h2>
+<?php
+for($i=0;$i<7;$i++){
+    for($j=0;$j<7;$j++){
+        if($i==0 || $i==6){
+            echo "*";
+        }elseif($j==0 || $j==6){
+            echo "*";
+        }else{
+            echo "&nbsp";
+        }
+    }
+    echo "<br>";
+}
+?>
+
+<h2>矩形加對角線</h2>
+<?php
+
+for($i=0;$i<7;$i++){
+
+    for($j=0;$j<7;$j++){
+        if($i==0 || $i==6){
+            echo "*";
+        }elseif($j==0 ||$j==6||$j==$i||$i+$j==6){
+            echo "*";
+        }else{
+            echo "&nbsp";
+        }
+    }
+    echo "<br>";
+}
+?>
+
+<h2>矩形加對角線，中間叉叉部分是紅色</h2>
+<?php
+
+for($i=0;$i<7;$i++){
+
+    for($j=0;$j<7;$j++){
+        if($i==0 || $i==6){
+            echo "*";
+        }elseif($j==0 ||$j==6){
+            echo "*";
+        // 以下叉叉部分是紅色
+        }elseif($j==$i||$i+$j==6){
+            echo "<span style='color:red'>*</span>";
+        }else{
+            echo "&nbsp";
+        }
+    }
+    echo "<br>";
+}
