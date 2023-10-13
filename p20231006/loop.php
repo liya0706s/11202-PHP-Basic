@@ -62,7 +62,11 @@ for($j=3;$j<=$n;$j++){
     for($i=2;$i<=($j/2);$i++) {
         $count++;
             echo "$j除以$i";
+<<<<<<< HEAD
             if(($j % $i)==0) {
+=======
+            if (($j % $i)==0){
+>>>>>>> pra
                 $flag=false;
             } 
     }
