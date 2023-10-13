@@ -82,6 +82,35 @@ for($i=0;$i<9;$i++){
 }
 ?>
 
+<h2>菱形變大</h2>
+<?php
+$amount=10;
+
+$mid=floor(($amount*2-1)/2);
+for($i=0;$i<($amount*2-1);$i++){
+    // 行數乘以兩倍減一
+
+// 無條件捨去法php函式 floor() 
+
+
+    if($i<=$mid){
+        $tmp=$i;
+    }else{
+        $tmp--;
+    }
+
+    for($j=0; $j<($mid-$tmp); $j++){
+        echo "&nbsp";
+    }
+    for($k=0; $k<($tmp*2+1); $k++){
+        echo "*";
+    }
+    echo "<br>";
+}
+?>
+
+<hr>
+
 <h2>矩形</h2>
 <?php
 for($i=0;$i<7;$i++){
@@ -97,6 +126,24 @@ for($i=0;$i<7;$i++){
     echo "<br>";
 }
 ?>
+
+<h2>矩形變大</h2>
+<?php
+for($i=0;$i<$amount;$i++){
+    for($j=0;$j<$amount;$j++){
+        if($i==0 || $i==($amount-1)){
+            echo "*";
+        }elseif($j==0 || $j==($amount-1)){
+            echo "*";
+        }else{
+            echo "&nbsp";
+        }
+    }
+    echo "<br>";
+}
+?>
+
+<hr>
 
 <h2>矩形加對角線</h2>
 <?php

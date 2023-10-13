@@ -6,4 +6,3 @@ $target="單字";
 $flag="沒找到";
 $start=0;
 
-while($flag==)
