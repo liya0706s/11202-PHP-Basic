@@ -118,3 +118,38 @@ for ($j = 0; $j < 10; $j++) {
     echo "</tr>";
 }
 echo "</table>";
+?>
+
+<h2>九九乘法表留左下</h2>
+<?php
+echo "<table>";
+echo "<tr>";
+for ($j = 0; $j < 10; $j++) {
+    if($j==0){
+        echo "<tr style='background:#eee'>";
+    }else{
+        echo "<tr>";
+    }
+    
+    for ($i = 0; $i < 10; $i++) {
+        if($i==0){
+            echo "<td style='background:#eee'>";
+        }else{
+            echo "<td>";
+        }
+        if ($j == 0 && $i == 0) {
+            echo "";
+        } elseif ($j == 0) {
+            echo $i;
+        } elseif ($i == 0) {
+            echo $j;
+        } elseif ($j<$i) { 
+            echo "";
+        } else {
+            echo $j * $i;
+        }
+        echo "</td>";
+    }
+    echo "</tr>";
+}
+echo "</table>";
