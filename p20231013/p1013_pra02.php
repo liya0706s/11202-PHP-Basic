@@ -9,6 +9,10 @@
             border-collapse: collapse;
             border: 1px solid pink;
         }
+
+        td {
+            padding: 3px 10px;
+        }
        
     </style>
 </head>

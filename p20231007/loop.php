@@ -114,10 +114,10 @@ echo "<hr>";
 
 <h3>判斷是否為質數</h3>
 <?php
-$a=98;
+$a=4;
 
 $flag=true;
-for($i=2;$i<($a/2);$i++) {
+for($i=2;$i<=($a/2);$i++) {
   echo "$a 除以$i 的餘數為:". ($a%$i);
   echo "<br>";
     if($a%$i==0){
@@ -135,15 +135,15 @@ if ($flag==true) {
 <?php
 echo "<br>";
 $a=4;
-$flag=true;
+$flag='是質數';
 for($i=2;$i<=($a/2);$i++){
   $a%$i;
   if($a%$i==0){
-    $flag==false;
+    $flag='不是質數';
     break;
   }
 }
-if($flag==true){
+if($flag=='是質數'){
   echo $a."是質數";
 } else {
   echo $a. "不是質數";

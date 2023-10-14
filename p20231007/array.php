@@ -44,6 +44,12 @@ echo $c['興趣'][0];
 
 $a=['甲','乙','丙','丁','戊'];
 
+//第一種列出陣列的方法foreach
+foreach($a as $value){
+    echo "$value<br>";
+}
+
+//第二種列出陣列的方法for加上count($a)
 for($i=0;$i<count($a);$i++){
     echo $a[$i];
 }

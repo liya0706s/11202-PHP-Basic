@@ -97,6 +97,9 @@ echo "一共執行了".$count."次的程式內容";
 <?php
 $a=['甲','乙','丙','丁'];
 
+foreach($a as $value){
+    echo "$value<br>";
+}
 
 for($i=0;$i<count($a);$i++){
     echo $a[$i];
