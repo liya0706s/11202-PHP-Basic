@@ -1,3 +1,15 @@
+<style>
+    table, td {
+        border-collapse: collapse;
+        border: 2px solid pink;
+    }
+
+    td {
+        padding: 3px 5px;
+    }
+</style>
+
+
 <h1>九九乘法表</h1>
 <?php
 // 步驟一:先列出九九乘法表的樣子
@@ -11,11 +23,16 @@
 // echo "<br>";
 
 // 步驟二:找出規律，放迴圈
+echo "<table>";
 for($i=1;$i<=9;$i++){
     // $i會有1-9的規律
+    echo "<tr>";
     for ($j=1;$j<=9;$j++){
-        echo $i.'x'.$j.'='.($i*$j);
-        echo "<br>";
+        echo "<td>";
+        echo $i.'x'.$j.'='.($i*$j) ."&nbsp&nbsp&nbsp&nbsp";
+        // echo "<br>"; 不用換行，改用四個空白
+        echo "</td>";
     }
-    echo "<br>";
+    echo "</tr>";
 }
+echo "</table>";
