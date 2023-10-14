@@ -1,11 +1,12 @@
 <style>
-    table, td {
+    table,
+    td {
         border-collapse: collapse;
         border: 2px solid pink;
     }
 
     td {
-        padding: 3px 5px;
+        padding: 3px 10px;
     }
 </style>
 
@@ -24,12 +25,12 @@
 
 // 步驟二:找出規律，放迴圈
 echo "<table>";
-for($i=1;$i<=9;$i++){
+for ($i = 1; $i <= 9; $i++) {
     // $i會有1-9的規律
     echo "<tr>";
-    for ($j=1;$j<=9;$j++){
+    for ($j = 1; $j <= 9; $j++) {
         echo "<td>";
-        echo $i.'x'.$j.'='.($i*$j) ."&nbsp&nbsp&nbsp&nbsp";
+        echo $i . 'x' . $j . '=' . ($i * $j) . "&nbsp&nbsp&nbsp&nbsp";
         // echo "<br>"; 不用換行，改用四個空白
         echo "</td>";
     }
@@ -85,17 +86,35 @@ echo "</table>";
         <td></td>
     </tr>
 </table> -->
-    <!-- 想想看以上的迴圈 -->
+<!-- 想想看以上的迴圈 -->
 
 <?php
 echo "<table>";
 echo "<tr>";
-for($j=1;$j<=9;$j++){
-    echo "</tr>";
-    for($i=1;$i<=9;$i++){
-        echo "<td>";
-        echo $j*$i;
+for ($j = 0; $j < 10; $j++) {
+    if($j==0){
+        echo "<tr style='background:#eee'>";
+    }else{
+        echo "<tr>";
+    }
+    
+    for ($i = 0; $i < 10; $i++) {
+        if($i==0){
+            echo "<td style='background:#eee'>";
+        }else{
+            echo "<td>";
+        }
+        if ($j == 0 && $i == 0) {
+            echo "";
+        } elseif ($j == 0) {
+            echo $i;
+        } elseif ($i == 0) {
+            echo $j;
+        } else {
+            echo $j * $i;
+        }
         echo "</td>";
     }
+    echo "</tr>";
 }
-?>
+echo "</table>";

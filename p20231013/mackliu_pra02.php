@@ -28,24 +28,32 @@ echo "</table>";
 
 echo "<table>";
 echo "<tr>";
+// 從零開始算，0-9共十個，條件設立小於十
 for($j=0;$j<10;$j++){
+    // 第一排$j==0 需要是灰色的，否則就換下一個tr
     if($j==0){
         echo "<tr style='background:#eee'>";
     }else{
         echo "<tr>";
     }
+    // 從零到九
     for ($i=0;$i<10;$i++){
+        // 第一排$i==0是灰色的
         if($i==0){
             echo "<td style='background:#eee'>";
         }else{
             echo "<td>";
         }
+        // 左上角當$j和$i都等於零顯示空白
         if($i==0 && $j==0){
             echo "";
+        // 第一列$j==0時,列出$i的數
         }else if($j==0){
             echo $i;
+        // 第一排$i==0時,列出$j的數
         }else if($i==0){
             echo $j;
+        //剩餘的列出兩數相乘
         }else{
             echo $j*$i;
         }
