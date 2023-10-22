@@ -40,12 +40,12 @@ echo "</table>";
 echo "<table>";
 echo "<tr>";
 for($j=0;$j<10;$j++){
-    // 在for裡面放if條件式判斷，讓第一列tr$j灰底色
+    // 在for裡面放if條件式判斷，讓第一列tr $j灰底色
     if($j==0){
         // 表頭是由0開始
         echo "<tr style='background:#eee'>";
     } else{
-        // 這邊是什麼意思?
+        // 換下一列
         echo "<tr>";
     }
 
@@ -53,7 +53,7 @@ for($j=0;$j<10;$j++){
         if($i==0){
             echo "<td style='background:#eee'>";
         } else{
-            // 這邊是什麼意思?
+            // 換下一排
             echo "<td>";
         }
 
