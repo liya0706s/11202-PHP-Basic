@@ -94,19 +94,47 @@ for($j=1;$j<=9;$j++){
     }
 
 }
-print_r($nine);
+?>
+// print_r($nine);
 
 // 迴圈內容印出來，每九個換行一次 
 // 透過餘數的方式，做斷行的判斷
+
+<style>
+    table {
+        border-collapse: collapse;
+    }
+    table, tr, td{
+        border: 1px black solid;
+        padding: 5px 9px;
+    }
+</style>
+
+<?php
 foreach($nine as $idx => $value) {
-    echo $value. "&nbsp";
-    if($idx%9==8){
+    echo $value;
+    if ($idx%9==8){
         echo "<br>";
     }
-    
 }
 
+echo "<table>";
+foreach($nine as $idx => $value) {
+    // echo $value;
+    if($idx%9==0){
+        echo "<tr> 
+                <td>$value</td>";
+    }else if ($idx%9==8){
+        echo "<td>$value</td>
+            </tr>";
+    }else{
+        echo "<td>$value</td>";
+    }
+    }
+echo "</table>";
 ?>
+
+
 
 
 
