@@ -22,12 +22,11 @@ $target="句子";
 $start=0;
 $flag="沒找到";
 
-while($flag="沒找到"){
-    $tmp=$sub_str($source,$start,mb_strlen($target)){
-    if($tmp=$target){
+while($flag=="沒找到"){
+    $tmp=mb_substr($source,$start,mb_strlen($target));
+    if($tmp==$target){
         $flag="找到了!";
         break;
-    }
     }
     $start++;
 }
@@ -37,3 +36,4 @@ echo "<br>";
 echo "原始目標:". $source;
 echo "<br>";
 echo "尋找字串:". $target;
+

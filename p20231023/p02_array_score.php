@@ -83,13 +83,14 @@ echo $avg;
 <?php
 
 // 宣告一個空的陣列
+// 這個陣列將被用來儲存九九乘法表的結果
 $nine=[];
 echo "<table>";
 for($j=1;$j<=9;$j++){
     echo "<tr>";
     for ($i=1;$i<=9;$i++){
         $nine[]="$j * $i = " .($j*$i). "<br>";
-        
+// 將乘法表的每個結果（例如:"2*3=6"）以字串的形式添加到$nine陣列中
     // 雙引號裡可以直接放變數，單引號放字串
     }
 
@@ -109,6 +110,7 @@ for($j=1;$j<=9;$j++){
         padding: 5px 9px;
     }
 </style>
+
 
 <?php
 foreach($nine as $idx => $value) {
