@@ -32,7 +32,10 @@ while(count($num)<6){
     // 小於六的狀況
     // 亂數是否在這陣列裡面
 
+    // 先暫時存起來
     $tmp=rand(1,38);
+    // 判斷$tmp值是否有在$num陣列中
+    // 如果$tmp沒有在$num陣列裡意思是沒有重覆
     if(!in_array($tmp,$num)){
         $num[]=$tmp;
     }
