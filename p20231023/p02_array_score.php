@@ -77,3 +77,36 @@ echo $avg;
 //     'score'=>88],
 
 // ]
+?>
+
+<h2>利用程式產生陣列</h2>
+<?php
+
+// 宣告一個空的陣列
+$nine=[];
+echo "<table>";
+for($j=1;$j<=9;$j++){
+    echo "<tr>";
+    for ($i=1;$i<=9;$i++){
+        $nine[]="$j * $i = " .($j*$i). "<br>";
+        
+    // 雙引號裡可以直接放變數，單引號放字串
+    }
+
+}
+print_r($nine);
+
+// 迴圈內容印出來，每九個換行一次 
+// 透過餘數的方式，做斷行的判斷
+foreach($nine as $idx => $value) {
+    echo $value. "&nbsp";
+    if($idx%9==8){
+        echo "<br>";
+    }
+    
+}
+
+?>
+
+
+
