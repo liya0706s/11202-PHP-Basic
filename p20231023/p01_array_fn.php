@@ -24,7 +24,9 @@ $ss="today is a good day";
 $tt=explode(" ",$ss);
 print_r($tt);
 
+
 $cc=implode("--",$tt);
+
 echo $cc;
 
  
