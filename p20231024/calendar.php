@@ -31,22 +31,32 @@
     echo "<h3>";
     echo date("西元Y年m月");
     echo "</h3>";
-    // 程式產生西元年
+    // 獲取當前年份
     $thisMonth = date("Y");
+
+    // 獲取本月第一天
     $thisFirstDay = date("Y-m-1");
+
+    // 獲取本月的第一天，是星期幾w 0（星期天）到 6（星期六）
     $thisFirstDate = date('w', strtotime($thisFirstDay));
-    echo $thisFirstDate;
     // 算幾個空白 目前星期和第一天的星期
-    // N or w? w比較符合現在,要小心處理
-    // strtotime($thisFirstDay) 第一天的秒數
-    // w:数字表示星期几	0（星期天）到 6（星期六）
+
+    // 輸出本月的第一天是星期幾
+    echo $thisFirstDate;
+    
+    
+    // 獲取本月的總天數t
     $thisMonthDays = date("t");
+
+    // 獲取本月的最後一天日期
     $thisLastDay = date("Y-m-$thisMonthDays");
-    // t:該月份的天數
     echo "<br>";
+
+    // 計算本月的總週數，總天數加上第一天的星期是從哪一天開始算，取整以確保覆蓋整個月
     $weeks=ceil(($thisMonthDays+$thisFirstDate)/7);
     echo "這個月共有". $weeks. "週";
     
+    // 輸出本月的總天數
     echo "<br>";
     echo "這個月共有" . $thisMonthDays . "天";
     echo $thisLastDay;
@@ -68,6 +78,8 @@
         for ($j = 0; $j < 7; $j++) {
             echo "<td>";
             $tmp = 7 * ($i + 1) - (6 - $j) - $thisFirstDate;
+            
+            // 檢查日期是否在本月範圍內，然後輸出日期
             if ($tmp > 0 && $tmp<=$thisMonthDays) {
                 echo $tmp;
             }
@@ -83,6 +95,98 @@
 
 
     ?>
+
+<?php
+    echo "<h3>";
+    echo date("西元Y年m月");
+    echo "</h3>";
+   
+    $thisMonth = date("Y");
+    // 這個月的第一天
+    $thisFirstDay = date("Y-m-1");
+    $thisFirstDate = date('w', strtotime($thisFirstDay));
+    echo $thisFirstDate;
+    $thisMonthDays = date("t");
+    $thisLastDay = date("Y-m-$thisMonthDays");
+    echo "<br>";
+
+    $weeks=ceil(($thisMonthDays+$thisFirstDate)/7);
+    
+    $firstCell=date("Y-m-d", strtotime("-$thisFirstDate days", strtotime($thisFirstDay)));
+    echo $firstCell;
+
+
+
+    echo "<table>";
+    echo "<tr>";
+    echo "<td>日</td>";
+    echo "<td>一</td>";
+    echo "<td>二</td>";
+    echo "<td>三</td>";
+    echo "<td>四</td>";
+    echo "<td>五</td>";
+    echo "<td>六</td>";
+    echo "</tr>";
+
+    for ($i = 0; $i < $weeks ; $i++) {
+        echo "<tr>";
+        for ($j = 0; $j < 7; $j++) {
+            $addDays=7*$i+$j;
+            $thisCellDate=strtotime("+$addDays days", strtotime($firstCell));
+            if(date('w', $thisCellDate)==0 || date('w',$thisCellDate)==6){
+                echo "<td style='background:pink'>";
+            } else {
+                echo "<td>";
+            }
+
+            if(date("m", $thisCellDate)==date("m", strtotime($thisFirstDay))) {
+                echo date("j", $thisCellDate);
+                // 月份中的第几天，没有补零	1 到 31
+            }
+            echo "</td>";
+        }
+    echo "</tr>";
+}
+
+echo "</table>";
+
+            // if($i==0 && $j==$thisFirstDate){
+            //     $startDays= 7 * ($i + 1) - (6 - $j) - $thisFirstDate -1;
+            //     $date=strtotime("+$startDays days", strtotime($thisFirstDay));
+            //     echo date("Y-m-d", $date);
+            // }else{
+            //     $tmp = 7 * ($i + 1) - (6 - $j) - $thisFirstDate-1;
+            //     $date=strtotime("$tmp days", strtotime($thisFirstDay));
+            //     echo date("Y-m-d", $date);
+            //     echo ",$tmp";
+            // }
+
+
+
+            // 月曆上第一格的第一天?????
+            // 第一格那一天的日期 公式
+
+
+            // $tmp = 7 * ($i + 1) - (6 - $j) - $thisFirstDate;
+            // if ($tmp > 0 && $tmp<=$thisMonthDays) {
+            //     echo $tmp;
+            // }
+
+            // $i=0 要加一，否則乘以會有問題
+            // $j是星期, $i是週
+            
+    //     }
+    //     echo "</tr>";
+    // }
+
+    // echo "</table>";
+
+    // ?>
+
+
+
+
+
 
 
     <h3>西元2023年10月</h3>
