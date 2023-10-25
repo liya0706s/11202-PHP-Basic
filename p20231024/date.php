@@ -20,6 +20,7 @@ echo date("Y-m-d H:i:s", $time);
 $date1='2023-10-24';
 $date2='2023-11-15';
 $days=(strtotime($date2)-strtotime($date1))/(60*60*24);
+// strtotime是秒數除以60是分除以60是小時除以24是天數
 
 echo $date1.'到'.$date2.'有'. $days.'天';
 // echo+字串
@@ -32,8 +33,9 @@ echo $date1.'到'.$date2.'有'. $days.'天';
 $date="1974-10-07";
 $br=strtotime($date);
 $diff=strtotime(date("Y")."-".date("m-d",$br));
-// date("Y")--今年的年份 和生日的月日
+// 計算生日當年的日期，保留今年的年份
 echo date("Y-m-d", $diff);
+// 輸出今年生日的年月日
 $today=strtotime('now');
 if($diff>$today){
     // 代表生日還沒到
@@ -41,7 +43,7 @@ if($diff>$today){
 } else {
     // 代表生日過了，年份+1
     // $nextbr=strtotime((date("Y")+1)."-".date("m-d",$br));
-    $diff=strtotime("+1 year",$diff);
+    $diff=strtotime("+1 year", $diff);
     $days=($diff-$today)/(60*60*24);
 }
 
@@ -91,22 +93,30 @@ if(date("N")<=5){
 
 <?php
 $todayWeek=date("N");
-// 代表星期
+// N代表星期 1 (for Monday) through 7 (for Sunday)
 // echo $todayWeek;
-// 今天是2週二，與下週一的距離是6 (7-2+1)
-// 這週一差一天，再算下週一
+// 今天是2 週二，與下週一的距離是6 (7-2+1)
+// 這週一差一天，再算下週一(-1+7)
 // echo "<br>";
 // echo $todayWeek-1;
 // 距離週一差一天
+// $lastMon=strtotime("-1 days");
+// -1 = $diff 
 echo "<br>";
 $diff=1-$todayWeek;
-$lastMon=Strtotime("$diff days");
-$nextMon=date("Y-m-d", strtotime("+1 week", $lastMon));
+// 與週一的距離是:減1天
+$lastMonday=strtotime("$diff days");
+echo date("Y-m-d", $lastMonday); //上周一的日期
+echo "<br>";
+// echo date("Y-m-d", strtotime("+1 week", $lastMonday)); 
+// strtotime("+1 week", $lastMonday) 從上周一加一週的秒數
+// 把以上是代表下一個週一，設為$nextMonday
+$nextMonday=date("Y-m-d", strtotime("+1 week", $lastMonday));
 
 for($i=0;$i<5;$i++){
-    $nextMon=date("Y-m-d", strtotime("+1 week", strtotime($nextMon)));
+    $nextMonday=date("Y-m-d l", strtotime("+1 week", strtotime($nextMonday)));
     // 每加一個week
-    echo $nextMon;
+    echo $nextMonday;
     echo "<br>";
 }
 

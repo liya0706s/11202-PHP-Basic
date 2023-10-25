@@ -7,6 +7,7 @@ $flag="沒找到";
 $start=0;
 while($flag=="沒找到"){
 
+    // $tmp是暫時的盒子，用來測試找到的字串是否等於$target
     $tmp=mb_substr($source,$start,mb_strlen($target));
     if($tmp==$target){
         $flag="找到";

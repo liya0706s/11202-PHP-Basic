@@ -184,10 +184,66 @@ echo "</table>";
 
     // ?>
 
+<?php
+    echo "<h3>";
+    echo date("西元Y年m月");
+    echo "</h3>";
+   
+    $thisMonth = date("Y");
+    // 這個月的第一天
+    $thisFirstDay = date("Y-m-1");
+    $thisFirstDate = date('w', strtotime($thisFirstDay));
+    // echo $thisFirstDate;
+    $thisMonthDays = date("t");
+    $thisLastDay = date("Y-m-$thisMonthDays");
+    // echo "<br>";
+
+    $weeks=ceil(($thisMonthDays+$thisFirstDate)/7);
+    // 計算这個月有多少週
+    
+    $firstCell=date("Y-m-d", strtotime("-$thisFirstDate days", strtotime($thisFirstDay)));
+    // echo $firstCell;
+    // 計算該日曆第一個單元格的日期
 
 
 
+    echo "<table>";
+    echo "<tr>";
+    echo "<td>日</td>";
+    echo "<td>一</td>";
+    echo "<td>二</td>";
+    echo "<td>三</td>";
+    echo "<td>四</td>";
+    echo "<td>五</td>";
+    echo "<td>六</td>";
+    echo "</tr>";
 
+    for ($i = 0; $i < $weeks ; $i++) {
+        echo "<tr>";
+        for ($j = 0; $j < 7; $j++) {
+            echo "<td>";
+            if($i==0 && $j==$thisFirstDate){
+            // 如果是第一週的第一天，計算開始日期
+                $startDays=7*($i+1)-(6-$j)-$thisFirstDate-1;
+                // 計算該月的日
+                $date=strtotime("+$startDays days",strtotime($thisFirstDay));
+                // 以strtotime計算日期，從這個月的第一天開始算+天數的日期
+                echo date("Y-m-d",$date);
+            }else{
+                $tmp=7*($i+1)-(6-$j)-$thisFirstDate-1;
+                $date=strtotime("$tmp days", strtotime($thisFirstDay));
+                // $tmp為負數的時候"+-1days"會無法判斷，所以把+刪除
+                echo date("Y-m-d", $date);
+                // echo ",$tmp";
+            }
+            echo "</td>";
+        }
+    echo "</tr>";
+}
+
+echo "</table>";
+
+?>
 
 
     <h3>西元2023年10月</h3>
