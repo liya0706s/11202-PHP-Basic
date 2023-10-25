@@ -32,17 +32,18 @@
     echo date("西元Y年m月");
     echo "</h3>";
     // 獲取當前年份
-    $thisMonth = date("Y");
+    $thisYear = date("Y");
 
     // 獲取本月第一天
     $thisFirstDay = date("Y-m-1");
 
-    // 獲取本月的第一天，是星期幾w 0（星期天）到 6（星期六）
+    // 本月第一天的星期w: 0（星期天）到 6（星期六）
     $thisFirstDate = date('w', strtotime($thisFirstDay));
+    // strtotime($thisFirstDay) 第一天的時間
     // 算幾個空白 目前星期和第一天的星期
 
-    // 輸出本月的第一天是星期幾
-    echo $thisFirstDate;
+    // 輸出本月第一天的星期
+    // echo $thisFirstDate;
     
     
     // 獲取本月的總天數t
@@ -57,9 +58,9 @@
     echo "這個月共有". $weeks. "週";
     
     // 輸出本月的總天數
-    echo "<br>";
-    echo "這個月共有" . $thisMonthDays . "天";
-    echo $thisLastDay;
+    // echo "<br>";
+    // echo "這個月共有" . $thisMonthDays . "天";
+    // echo $thisLastDay;
 
 
     echo "<table>";
@@ -78,14 +79,14 @@
         for ($j = 0; $j < 7; $j++) {
             echo "<td>";
             $tmp = 7 * ($i + 1) - (6 - $j) - $thisFirstDate;
-            
-            // 檢查日期是否在本月範圍內，然後輸出日期
-            if ($tmp > 0 && $tmp<=$thisMonthDays) {
-                echo $tmp;
-            }
-
             // $i=0 要加一，否則乘以會有問題
             // $j是星期, $i是週
+            
+            if ($tmp > 0 && $tmp<=$thisMonthDays) {
+                echo $tmp;
+                //$tmp>0才輸出，不然會有輸出負數的日期
+                // 檢查日期"在本月範圍內"，輸出日期
+            }
             echo "</td>";
         }
         echo "</tr>";
