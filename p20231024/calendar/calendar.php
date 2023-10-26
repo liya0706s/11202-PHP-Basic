@@ -44,8 +44,8 @@
 
     // 輸出本月第一天的星期
     // echo $thisFirstDate;
-    
-    
+
+
     // 獲取本月的總天數t
     $thisMonthDays = date("t");
 
@@ -54,9 +54,9 @@
     echo "<br>";
 
     // 計算本月的總週數，總天數加上第一天的星期是從哪一天開始算，取整以確保覆蓋整個月
-    $weeks=ceil(($thisMonthDays+$thisFirstDate)/7);
-    echo "這個月共有". $weeks. "週";
-    
+    $weeks = ceil(($thisMonthDays + $thisFirstDate) / 7);
+    echo "這個月共有" . $weeks . "週";
+
     // 輸出本月的總天數
     // echo "<br>";
     // echo "這個月共有" . $thisMonthDays . "天";
@@ -74,15 +74,15 @@
     echo "<td>六</td>";
     echo "</tr>";
 
-    for ($i = 0; $i < $weeks ; $i++) {
+    for ($i = 0; $i < $weeks; $i++) {
         echo "<tr>";
         for ($j = 0; $j < 7; $j++) {
             echo "<td>";
             $tmp = 7 * ($i + 1) - (6 - $j) - $thisFirstDate;
             // $i=0 要加一，否則乘以會有問題
             // $j是星期, $i是週
-            
-            if ($tmp > 0 && $tmp<=$thisMonthDays) {
+
+            if ($tmp > 0 && $tmp <= $thisMonthDays) {
                 echo $tmp;
                 //$tmp>0才輸出，不然會有輸出負數的日期
                 // 檢查日期"在本月範圍內"，輸出日期
@@ -97,11 +97,11 @@
 
     ?>
 
-<?php
+    <?php
     echo "<h3>";
     echo date("西元Y年m月");
     echo "</h3>";
-   
+
     $thisMonth = date("Y");
     // 這個月的第一天
     $thisFirstDay = date("Y-m-1");
@@ -111,9 +111,9 @@
     $thisLastDay = date("Y-m-$thisMonthDays");
     echo "<br>";
 
-    $weeks=ceil(($thisMonthDays+$thisFirstDate)/7);
-    
-    $firstCell=date("Y-m-d", strtotime("-$thisFirstDate days", strtotime($thisFirstDay)));
+    $weeks = ceil(($thisMonthDays + $thisFirstDate) / 7);
+
+    $firstCell = date("Y-m-d", strtotime("-$thisFirstDate days", strtotime($thisFirstDay)));
     echo $firstCell;
 
 
@@ -129,66 +129,67 @@
     echo "<td>六</td>";
     echo "</tr>";
 
-    for ($i = 0; $i < $weeks ; $i++) {
+    for ($i = 0; $i < $weeks; $i++) {
         echo "<tr>";
         for ($j = 0; $j < 7; $j++) {
-            $addDays=7*$i+$j;
-            $thisCellDate=strtotime("+$addDays days", strtotime($firstCell));
-            if(date('w', $thisCellDate)==0 || date('w',$thisCellDate)==6){
+            $addDays = 7 * $i + $j;
+            $thisCellDate = strtotime("+$addDays days", strtotime($firstCell));
+            if (date('w', $thisCellDate) == 0 || date('w', $thisCellDate) == 6) {
                 echo "<td style='background:pink'>";
             } else {
                 echo "<td>";
             }
 
-            if(date("m", $thisCellDate)==date("m", strtotime($thisFirstDay))) {
+            if (date("m", $thisCellDate) == date("m", strtotime($thisFirstDay))) {
                 echo date("j", $thisCellDate);
                 // 月份中的第几天，没有补零	1 到 31
             }
             echo "</td>";
         }
-    echo "</tr>";
-}
+        echo "</tr>";
+    }
 
-echo "</table>";
+    echo "</table>";
 
-            // if($i==0 && $j==$thisFirstDate){
-            //     $startDays= 7 * ($i + 1) - (6 - $j) - $thisFirstDate -1;
-            //     $date=strtotime("+$startDays days", strtotime($thisFirstDay));
-            //     echo date("Y-m-d", $date);
-            // }else{
-            //     $tmp = 7 * ($i + 1) - (6 - $j) - $thisFirstDate-1;
-            //     $date=strtotime("$tmp days", strtotime($thisFirstDay));
-            //     echo date("Y-m-d", $date);
-            //     echo ",$tmp";
-            // }
-
-
-
-            // 月曆上第一格的第一天?????
-            // 第一格那一天的日期 公式
+    // if($i==0 && $j==$thisFirstDate){
+    //     $startDays= 7 * ($i + 1) - (6 - $j) - $thisFirstDate -1;
+    //     $date=strtotime("+$startDays days", strtotime($thisFirstDay));
+    //     echo date("Y-m-d", $date);
+    // }else{
+    //     $tmp = 7 * ($i + 1) - (6 - $j) - $thisFirstDate-1;
+    //     $date=strtotime("$tmp days", strtotime($thisFirstDay));
+    //     echo date("Y-m-d", $date);
+    //     echo ",$tmp";
+    // }
 
 
-            // $tmp = 7 * ($i + 1) - (6 - $j) - $thisFirstDate;
-            // if ($tmp > 0 && $tmp<=$thisMonthDays) {
-            //     echo $tmp;
-            // }
 
-            // $i=0 要加一，否則乘以會有問題
-            // $j是星期, $i是週
-            
+    // 月曆上第一格的第一天?????
+    // 第一格那一天的日期 公式
+
+
+    // $tmp = 7 * ($i + 1) - (6 - $j) - $thisFirstDate;
+    // if ($tmp > 0 && $tmp<=$thisMonthDays) {
+    //     echo $tmp;
+    // }
+
+    // $i=0 要加一，否則乘以會有問題
+    // $j是星期, $i是週
+
     //     }
     //     echo "</tr>";
     // }
 
     // echo "</table>";
 
-    // ?>
+    // 
+    ?>
 
-<?php
+    <?php
     echo "<h3>";
     echo date("西元Y年m月");
     echo "</h3>";
-   
+
     $thisMonth = date("Y");
     // 這個月的第一天
     $thisFirstDay = date("Y-m-1");
@@ -198,10 +199,10 @@ echo "</table>";
     $thisLastDay = date("Y-m-$thisMonthDays");
     // echo "<br>";
 
-    $weeks=ceil(($thisMonthDays+$thisFirstDate)/7);
+    $weeks = ceil(($thisMonthDays + $thisFirstDate) / 7);
     // 計算这個月有多少週
-    
-    $firstCell=date("Y-m-d", strtotime("-$thisFirstDate days", strtotime($thisFirstDay)));
+
+    $firstCell = date("Y-m-d", strtotime("-$thisFirstDate days", strtotime($thisFirstDay)));
     // echo $firstCell;
     // 計算該日曆第一個單元格的日期
 
@@ -218,32 +219,28 @@ echo "</table>";
     echo "<td>六</td>";
     echo "</tr>";
 
-    for ($i = 0; $i < $weeks ; $i++) {
+    for ($i = 0; $i < $weeks; $i++) {
         echo "<tr>";
         for ($j = 0; $j < 7; $j++) {
-            echo "<td>";
-            if($i==0 && $j==$thisFirstDate){
-            // 如果是第一週的第一天，計算開始日期
-                $startDays=7*($i+1)-(6-$j)-$thisFirstDate-1;
-                // 計算該月的日
-                $date=strtotime("+$startDays days",strtotime($thisFirstDay));
-                // 以strtotime計算日期，從這個月的第一天開始算+天數的日期
-                echo date("Y-m-d",$date);
-            }else{
-                $tmp=7*($i+1)-(6-$j)-$thisFirstDate-1;
-                $date=strtotime("$tmp days", strtotime($thisFirstDay));
-                // $tmp為負數的時候"+-1days"會無法判斷，所以把+刪除
-                echo date("Y-m-d", $date);
-                // echo ",$tmp";
+            $addDays = 7 * $i + $j;
+            $thisCellDate = date("Y-m-d", strtotime("+$addDays days", strtotime($firstCell)));
+            $thisCell=strtotime($thisCellDate);
+            if (date('w',$thisCell)==0 || date('w',$thisCell)==6 ){
+                echo "<td style='background:pink'>";
+            } else {
+                echo "<td>";
             }
+            if (date("m") == date("m", strtotime($thisCellDate))) {
+                echo $thisCellDate;
+            } 
             echo "</td>";
         }
-    echo "</tr>";
-}
+        echo "</tr>";
+    }
+    echo "</table>";
+    
+    ?>
 
-echo "</table>";
-
-?>
 
 
     <h3>西元2023年10月</h3>
