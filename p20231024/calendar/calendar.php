@@ -29,6 +29,7 @@
 
     <?php
     echo "<h3>";
+    echo "方法一";
     echo date("西元Y年m月");
     echo "</h3>";
     // 獲取當前年份
@@ -99,6 +100,7 @@
 
 <?php
     echo "<h3>";
+    echo "方法二";
     echo date("西元Y年m月");
     echo "</h3>";
    
@@ -114,6 +116,7 @@
     $weeks=ceil(($thisMonthDays+$thisFirstDate)/7);
     
     $firstCell=date("Y-m-d", strtotime("-$thisFirstDate days", strtotime($thisFirstDay)));
+    // 要算出本月第一天為基礎，減去星期w
     echo $firstCell;
 
 
@@ -186,6 +189,7 @@ echo "</table>";
 
 <?php
     echo "<h3>";
+    echo "方法三";
     echo date("西元Y年m月");
     echo "</h3>";
    
@@ -245,7 +249,7 @@ echo "</table>";
 
 ?>
 
-
+    <h4>html生成:</h4>
     <h3>西元2023年10月</h3>
     <table>
         <tr>
