@@ -113,16 +113,9 @@
     $thisLastDay = date("Y-m-$thisMonthDays");
     echo "<br>";
 
-<<<<<<< HEAD
     $weeks = ceil(($thisMonthDays + $thisFirstDate) / 7);
 
     $firstCell = date("Y-m-d", strtotime("-$thisFirstDate days", strtotime($thisFirstDay)));
-=======
-    $weeks=ceil(($thisMonthDays+$thisFirstDate)/7);
-    
-    $firstCell=date("Y-m-d", strtotime("-$thisFirstDate days", strtotime($thisFirstDay)));
-    // 要算出本月第一天為基礎，減去星期w
->>>>>>> 2dd813c0f0f27a7b58e088a816558293ef6e1f0f
     echo $firstCell;
 
 

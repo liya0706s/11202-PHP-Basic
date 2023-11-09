@@ -93,7 +93,7 @@
 
             if(date("m", $thisCellDate)==date("m", strtotime($thisFirstDay))) {
                 echo date("j", $thisCellDate);
-                // 月份中的第几天，没有补零	1 到 31
+                // 顯示每一格td的日期
             }
             echo "</td>";
         }
